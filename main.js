@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Input filling verification block
 
 function Verify()
