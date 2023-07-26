@@ -1,59 +1,55 @@
-<<<<<<< HEAD
 // Input filling verification block
 
-function Verify()
+function verify()
 {
+    // verifica se usuario e senha estao preenchidos
+
     let user = document.getElementById("loginEmail").value;
     let pswr = document.getElementById("loginSenha").value;
 
-    if (!user || !pswr){
+    if (!user || !pswr) {
         alert("Campos de preenchimento obrigatório. Favor preencher!");
-    }
-    else{
+    } else {
         window.location.href = "aula2.html";
     }
 }
 
-/*Função para criar a lista de usuários*/
+/* FUNCTION TO CREATE THE USER LIST
+ *
+ * Creates the Array to store users
+ */
 
-/*
--->Cria o Array par amazernar os usuários
-*/
+var dadosLista = [];
 
-var dadosListas = [];
-
-function salvarUser(){
+function saveUser() {
     let nomeUser = document.getElementById("nomeUser").value;
 
-    if(nomeUser){
-        dadosListas.push(nomeUser);
-        crialista();
-        document.getElementById("nomeUser").value = "";
-
-        //console.log(dadosListas);
+    if (nomeUser) {
+        dadosLista.push(nomeUser);
+        createList();
+        document.getElementById("nomeUser").value = null;
     }
 }
 
-function crialista(){
-    let tabela = document.getElementById("tabela").innerHTML = "<tr><th>Nome Usuário</th><th>Ações</th></tr>"
+function createList() {
+    let tabela = document.getElementById("tabela").innerHTML = "<tr><th>Nome Usuário</th><th>Ações</th></tr>";
 
-    for(let i=0; i <= (dadosListas.length-1); i++){
-        tabela += "<tr><td>" + dadosListas[i] + "</td><td><button class='btn btn-success' onclick='editar(this.parentNode.parentNode.rowIndex)'>Editar</Button><button class='btn btn-danger' onclick='excluir(this.parentNode.parentNode.rowIndex)'>Excluir</button></td></tr>";
-        document.getElementById('tabela').innerHTML = tabela;
+    for (let i = 0; i < dadosLista.length; i++) {
+        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class=\"btn btn-success\" onclick=\"edit(this.parentNode.parentNode.rowIndex)\">Editar</button><button class=\"btn btn-danger\" onclick=\"remove(this.parentNode.parentNode.rowIndex)\">Excluir</button></td></tr>";
+        document.getElementById("tabela").innerHTML = tabela;
     }
 }
 
+// NAME EDIT FUNCTION
 
-//FUNÇÃO PARA EDIÇÃO DE NOME
-
-function editar(i){
-    document.getElementById("nomeUser").value = dadosListas[(i - 1)];
-    dadosListas.splice(dadosListas[(i - 1)], 1);
+function edit(i) {
+    document.getElementById("nomeUser").value = dadosLista[i - 1];
+    dadosLista.splice(dadosLista[i - 1], 1);
 }
 
-//FUNÇÃO PARA EXCLUIR NOME
+// NAME DELETE FUNCTION
 
-function excluir(i){
-    dadosListas.splice((i - 1), 1);
+function remove(i) {
+    dadosLista.splice(i - 1, 1);
     document.getElementById("tabela").deleteRow(i);
 }
