@@ -2,7 +2,7 @@
 
 function verify()
 {
-    // verifica se usuario e senha estao preenchidos
+    // verifica se usuario e senha estão preenchidos
 
     let user = document.getElementById("loginEmail").value;
     let pswr = document.getElementById("loginSenha").value;
@@ -14,7 +14,7 @@ function verify()
     }
 }
 
-/* FUNCTION TO CREATE THE USER LIST
+/* Função para criar lista e usuário
  *
  * Creates the Array to store users
  */
@@ -28,11 +28,15 @@ function saveUser() {
         dadosLista.push(nomeUser);
         createList();
         document.getElementById("nomeUser").value = null;
+    }else{
+        alert("Digite um nome")
+        document.getElementById('nomeUser').focus();   //leva o cursor para digita no campo
     }
 }
 
+//Insere nome na tabela abaixo do botão salvar
 function createList() {
-    let tabela = document.getElementById("tabela").innerHTML = "<tr><th>Nome Usuário</th><th>Ações</th></tr>";
+    let tabela = document.getElementById("tabela").innerHTML = "<tr><th>Nome Usuário</th><th>After</th><th>Ações</th></tr>";
 
     for (let i = 0; i < dadosLista.length; i++) {
         tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class=\"btn btn-success\" onclick=\"edit(this.parentNode.parentNode.rowIndex)\">Editar</button><button class=\"btn btn-danger\" onclick=\"remove(this.parentNode.parentNode.rowIndex)\">Excluir</button></td></tr>";
@@ -40,16 +44,24 @@ function createList() {
     }
 }
 
-// NAME EDIT FUNCTION
-
+// Função para editar nome
 function edit(i) {
     document.getElementById("nomeUser").value = dadosLista[i - 1];
     dadosLista.splice(dadosLista[i - 1], 1);
 }
 
-// NAME DELETE FUNCTION
 
+// Função deletar nome
 function remove(i) {
     dadosLista.splice(i - 1, 1);
     document.getElementById("tabela").deleteRow(i);
+}
+
+
+//Função de Quantidade
+
+
+//Função para Confirmar Pagamento fixo
+function confimation() {
+
 }
