@@ -36,7 +36,7 @@ function saveUser() {
 
 //Insere nome na tabela abaixo do botão salvar
 function createList() {
-    let tabela = document.getElementById("tabela").innerHTML = "<tr><th>Nome Usuário</th><th>After</th><th>Ações</th></tr>";
+    let tabela = document.getElementById("tabela").innerHTML = "<tr><th>Nome Usuário</th><th>After</th><th>Levar</th><th>Quantidade</th><th>Dinheiro a Mais</th><th>Ações</th></tr>";
 
     for (let i = 0; i < dadosLista.length; i++) {
         tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class=\"btn btn-success\" onclick=\"edit(this.parentNode.parentNode.rowIndex)\">Editar</button><button class=\"btn btn-danger\" onclick=\"remove(this.parentNode.parentNode.rowIndex)\">Excluir</button></td></tr>";
@@ -62,6 +62,6 @@ function remove(i) {
 
 
 //Função para Confirmar Pagamento fixo
-function confimation() {
 
-}
+
+

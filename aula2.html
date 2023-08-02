@@ -6,24 +6,44 @@
     <title>Página em Construção</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
     <script src="main.js"></script>
 </head>
 <body>
     <div class="container">
+        <h3>Quem irá a festa?</h3>
         <label id="nome">Nome:</label>
-        <input class="form-control" id="nomeUser" type="text" />
+        <input class="form-control" id="nomeUser" type="text"/>
+        <br>
+        <label>After:</label>
+        <input class="form-control" id="after" type="text" placeholder="Sim, Não ou Talvez">
+        <br>
+        <label>Levar:</label>
+        <input class="form-control" id="levar" type="text">
+        <br>
+        <label>Quantidade:</label>
+        <input class="form-control" id="quantidade" type="text">
+        <br>
+        <label>Dinheiro a Mais:</label>
+        <input class="form-control" id="dinheiro" type="text">
         <br>
         <button class="btn btn-primary" type="button" onclick="saveUser()">Salvar</button>
     </div>
+
     <br>
+
     <div class="container">
         <table class="table table-striped" id="tabela">
             <tr>
                 <th>Nome Usuário</th>
                 <th>After</th>
+                <th>Levar</th>
+                <th>Quantidade</th>
+                <th>Dinheiro a Mais</th>
                 <th>Ações</th>
             </tr>
         </table>
     </div>
+    
 </body>
 </html>
