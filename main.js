@@ -17,8 +17,7 @@ function verify()
 /* Função para criar lista e usuário
  *
  * Creates the Array to store users
- */
-
+*/
 
 var dadosLista = [];
 var after1 = [];
